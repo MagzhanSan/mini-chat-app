@@ -4,11 +4,10 @@ import ChatWindow from "@/app/components/chat-window";
 export default async function HomePage({
   searchParams,
 }: {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  searchParams: any;
+  searchParams: Promise<{ chatId?: string }>;
 }) {
-  const { chatId } = await searchParams;
-  const parsedChatId = chatId ? Number(chatId) : null;
+  const params = await searchParams;
+  const parsedChatId = params.chatId ? Number(params.chatId) : null;
 
   return (
     <div className="flex h-screen">
