@@ -3,7 +3,8 @@ import { NextResponse } from "next/server";
 
 export async function GET(
   request: Request,
-  context: { params: { chatId: string } }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  context: { params: any }
 ) {
   const { chatId } = await context.params;
   const parsedChatId = parseInt(chatId, 10);

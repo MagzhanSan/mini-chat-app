@@ -4,7 +4,8 @@ import ChatWindow from "@/app/components/chat-window";
 export default async function HomePage({
   searchParams,
 }: {
-  searchParams: { chatId?: string };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  searchParams: any;
 }) {
   const { chatId } = await searchParams;
   const parsedChatId = chatId ? Number(chatId) : null;
